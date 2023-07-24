@@ -1,0 +1,23 @@
+# Keyboard Layout
+setxkbmap es &
+
+# Wallpaper
+feh --bg-scale /home/marcosrodrui/OneDrive/MARCOS/MARCOS_Multimedia/Multimedia_Wallpapers/PC/mistborn.png
+
+#Default Brightness
+brightnessctl set 100 &
+
+# Composer
+picom --experimental-backends &
+
+# Automount Devices
+udiskie -t &
+
+#Red light
+redshift -P -O 4200 &
+
+# Network
+nm-applet &
+
+# Battery
+cbatticon &
