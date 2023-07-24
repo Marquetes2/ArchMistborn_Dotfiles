@@ -3,11 +3,12 @@
 # Dotfiles folder location
 dotfile="Desktop/Dotfiles/"
 # Config file locations relative to the home directory
-config=( ".bashrc" ".xprofile" )
+config=( ".bashrc" ".xprofile" ".face" ".config/alacritty" ".config/betterlockscreen")
 
 # For each config file, a symbolic link is created
 for value in "${config[@]}"
 do
-  ln -sf "$dotfile""$value" ~/"$value"
-  echo ~/"$dotfile""$value" ~/"$value"
+  rm -rf ~/"$value"
+  ln -sf ~/"$dotfile""$value" ~/"$value"
+  echo -e "Created link ~/$dotfile$value \t to ~/$value"
 done
