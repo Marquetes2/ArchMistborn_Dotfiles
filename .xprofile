@@ -2,7 +2,7 @@
 setxkbmap es &
 
 # Wallpaper
-feh --bg-scale /home/marcosrodrui/OneDrive/MARCOS/MARCOS_Multimedia/Multimedia_Wallpapers/PC/mistborn.png
+feh --bg-scale /home/marcosrodrui/Desktop/mistborn.png
 
 #Default Brightness
 brightnessctl set 100 &
