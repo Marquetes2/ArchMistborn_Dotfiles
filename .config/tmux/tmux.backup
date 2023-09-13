@@ -1,0 +1,79 @@
+# For having full 24 bit support
+set -g default-terminal "tmux-256color"
+set -sg terminal-overrides ",*:RGB"
+
+# Using the mouse
+set -g mouse on
+
+# Shift Alt vim keys to switch windows
+bind -n M-H previous-window
+bind -n M-L next-window
+
+# Change prefix
+unbind C-b
+set -g prefix C-Space
+bind C-Space send-prefix
+
+# Start windows and panes at 1, not 0
+set -g base-index 1
+set -g pane-base-index 1
+set-window-option -g pane-base-index 1
+set-option -g renumber-windows on
+
+# Plugins
+set -g @plugin 'tmux-plugins/tpm'
+set -g @plugin 'tmux-plugins/tmux-sensible'
+set -g @plugin 'christoomey/vim-tmux-navigator'
+set -g @plugin 'tmux-plugins/tmux-yank'
+set -g @plugin 'o0th/tmux-nova'
+
+bind-key b set-option status
+
+# set vi-mode
+set-window-option -g mode-keys vi
+
+# keybindings
+bind-key -T copy-mode-vi v send-keys -X begin-selection
+bind-key -T copy-mode-vi C-v send-keys -X rectangle-toggle
+bind-key -T copy-mode-vi y send-keys -X copy-selection-and-cancel
+
+# New split has the current directory
+bind '"' split-window -v -c "#{pane_current_path}"
+bind % split-window -h -c "#{pane_current_path}"
+
+# Rebind to resize with vim controls
+bind-key -r -T prefix       C-K           resize-pane -U 5
+bind-key -r -T prefix       C-J           resize-pane -D 5
+bind-key -r -T prefix       C-H           resize-pane -L 5
+bind-key -r -T prefix       C-L           resize-pane -R 5
+
+# Rebind for killing a session
+bind-key k confirm-before -p "Kill session? (y/n)" "kill-session"
+
+# Sends the current window to a new session
+bind-key w command-prompt -p "New session name:" "new-session -d -s %1; move-window -t %1:; kill-window -t %1:1"
+# Sends the current window to an existing session
+bind-key e command-prompt -p "Session name:" "move-window -t %1:"
+# Sends the current panel to a new window
+bind-key v command-prompt -p "Window name:" "move-pane -t :%1"
+
+# Theme configuration
+set -g @nova-nerdfonts true
+set -g @nova-nerdfonts-left 
+set -g @nova-nerdfonts-right 
+
+set -g @nova-segment-mode "#{?client_prefix,Ω,ω}"
+set -g @nova-segment-mode-colors "#50fa7b #282a36"
+
+set -g @nova-segment-whoami "#(whoami)@#h"
+set -g @nova-segment-whoami-colors "#50fa7b #282a36"
+
+set -g @nova-segments-0-left "mode"
+set -g @nova-segments-0-right "whoami"
+
+set -g @nova-pane "#I#{?pane_in_mode,  #{pane_mode},}  #W"
+
+set -g @nova-rows 0
+
+# Running the plugins
+run '~/.tmux/plugins/tpm/tpm'
