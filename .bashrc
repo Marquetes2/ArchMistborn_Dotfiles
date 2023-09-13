@@ -5,6 +5,8 @@ alias ls='lsd'
 alias cat='bat'
 alias vim='nvim'
 
+export EDITOR='nvim'
+
 # Sets the terminal to be alacritty when starting tmux
 if [ "$TMUX" ]
 then
