@@ -7,12 +7,6 @@ alias vim='nvim'
 
 export EDITOR='nvim'
 
-# Sets the terminal to be alacritty when starting tmux
-if [ "$TMUX" ]
-then
-  if [[ "$TERM" != "alacritty" ]]
-  then
-    export TERM=alacritty
-    bash
-  fi
-fi 
+# TMUX
+export TERM=alacritty
+[ -z "$TMUX"  ] && { tmux attach || exec tmux new-session && exit;}
