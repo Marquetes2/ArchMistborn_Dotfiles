@@ -24,7 +24,10 @@ local plugins = {
         "c",
 
         -- python
-        "python"
+        "python",
+
+        -- gdscript (Godot)
+        "gdscript",
       },
     },
   },
@@ -45,10 +48,15 @@ local plugins = {
           "typescript-language-server",
           "css-lsp",
           "html-lsp",
-          "emmet-language-server"
+          "emmet-language-server",
+          "gdtoolkit"
         },
       },
   },
+  {
+    "habamax/vim-godot",
+    lazy=false
+  }
 }
 
 return plugins
