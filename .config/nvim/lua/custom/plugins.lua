@@ -28,6 +28,14 @@ local plugins = {
 
         -- gdscript (Godot)
         "gdscript",
+
+        -- norg (Neorg)
+        "norg"
+      },
+      indent = {
+          enable = true,
+          -- Godot autoindent having problems
+          disable = {"gdscript"}
       },
     },
   },
@@ -36,6 +44,14 @@ local plugins = {
      config = function()
         require "plugins.configs.lspconfig"
         require "custom.configs.lspconfig"
+     end
+  },
+  {
+    "nvim-telescope/telescope.nvim",
+    dependencies = { "nvim-treesitter/nvim-treesitter", { "nvim-telescope/telescope-fzf-native.nvim", build = "make" } },
+    cmd = "Telescope",
+     config = function()
+        require "custom.configs.telescope"
      end
   },
   {
@@ -55,6 +71,58 @@ local plugins = {
   },
   {
     "habamax/vim-godot",
+    lazy=false
+  },
+  {
+    "folke/zen-mode.nvim",
+    opts = {
+      -- your configuration comes here
+      -- or leave it empty to use the default settings
+      -- refer to the configuration section below
+    },
+    lazy=false
+  },
+  {
+    "nvim-neorg/neorg",
+    build = ":Neorg sync-parsers",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    config = function()
+      require("neorg").setup {
+        load = {
+          ["core.defaults"] = {}, -- Loads default behaviour
+          ["core.concealer"] = { -- Adds pretty icons to your documents
+            config = {
+              icon_preset = "diamond"
+            }
+          },
+          ["core.keybinds"] = { -- Keybinds
+              config = {
+                  hook = function(keybinds)
+                      -- Keybind for toggling the todo list
+                      -- keybinds.remap_event("norg", "n", "<C-j>", "core.qol.todo_items.todo.task_cycle")
+                  end,
+              }
+          },
+          ["core.dirman"] = { -- Manages Neorg workspaces
+            config = {
+              workspaces = {
+                notes = "~/Notes",
+              },
+              default_workspace = "notes"
+            },
+          },
+          ["core.summary"] = {}, -- Creation of summaries
+          ["core.presenter"] = {
+            config = {
+              zen_mode = "zen-mode"
+            }
+          }, -- Allows zen mode
+          -- ["core.ui.calendar"] = {}, -- Calendar
+        },
+      }
+      vim.wo.foldlevel = 99
+      vim.wo.conceallevel = 2
+    end,
     lazy=false
   }
 }
