@@ -1,9 +1,8 @@
 -- If nvim is running in the Notes directory, then apply some changes
 local M = {}
-
   
 local function check_notes()
-  local directory = os.getenv("OLDPWD")
+  local directory = os.getenv("PWD")
   return string.find(directory, "/Notes")
 end
 

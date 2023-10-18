@@ -37,6 +37,9 @@ M.ui = {
       "                            ████                            ",
       "                           ██████                           ",
     }
+  },
+  tabufline = {
+    enabled = true
   }
 }
 
