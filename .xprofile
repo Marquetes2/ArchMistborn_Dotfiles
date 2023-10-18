@@ -21,3 +21,6 @@ nm-applet &
 
 # Battery
 cbatticon &
+
+# Xbanish
+xbanish &
