@@ -12,8 +12,8 @@ from .theme import colors
 layout_conf = {
     'border_focus': colors['focus'][0],
     'border_normal':colors['inactive'][0],
-    'border_width': 2,
-    'margin':4,
+    'border_width': 1,
+    'margin':3,
     'border_on_single':True,
 }
 

@@ -89,6 +89,9 @@ keys = [Key(key[0], key[1], *key[2:]) for key in [
     # Window Nav
     ([mod, "shift"], "m", lazy.spawn("rofi -show")),
 
+    # Gaming Hub
+    ([mod], "g", lazy.spawn("rofi -modi games -show games -theme games")),
+
     # Browser
     ([mod, "shift"], "f", lazy.spawn("firefox")),
 
@@ -105,7 +108,8 @@ keys = [Key(key[0], key[1], *key[2:]) for key in [
 
     # Screenshot
     ([mod], "Print", lazy.spawn("bash -c 'scrot ~/Desktop/Capturas/%Y-%m-%d-%H:%M:%S.png'")),
-    ([mod, "shift"], "Print", lazy.spawn("bash -c 'scrot ~/Desktop/Capturas/%Y-%m-%d-%H:%M:%S.png -s'")),
+    ([mod, "mod1"], "Print", lazy.spawn("bash -c 'scrot /tmp/copy_to_clipboard.png -s && \\cat /tmp/copy_to_clipboard.png | xclip -selection clipboard -target image/png -i && rm /tmp/copy_to_clipboard.png'")),
+    ([mod, "shift"], "Print", lazy.spawn("bash -c '")),
 
     # Shutdown
     ([mod, "mod1"], "F4", lazy.spawn("neoshutdown")),
