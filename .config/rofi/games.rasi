@@ -1,0 +1,6 @@
+@import "./game_launcher/launcher"
+
+element-icon {
+    size:       10%;
+    margin:     0px;
+}

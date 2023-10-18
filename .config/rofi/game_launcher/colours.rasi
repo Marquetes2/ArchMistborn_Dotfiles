@@ -1,0 +1,22 @@
+* {
+    background-color:               transparent;
+    background:                     #1D2330;
+    background-transparent:         #1D2330A0;
+    text-color:                     #98d1ce;
+    text-color-selected:            #26a98b;
+    primary:                        #26a98b;
+    important:                      #c33027;
+    font-title:                     "SF Pro Bold 27";
+}
+
+configuration {
+    font:                           "SF Pro 17";
+}
+
+element-text {
+    text-color: @text-color;
+}
+
+element-text selected {
+    text-color: @text-color-selected;
+}
