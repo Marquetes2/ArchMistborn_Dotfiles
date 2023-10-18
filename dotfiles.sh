@@ -3,7 +3,7 @@
 # Dotfiles folder location
 dotfile="Desktop/Dotfiles/"
 # Config file locations relative to the home directory
-config=( ".bashrc" ".xprofile" ".face" ".config/alacritty" ".config/betterlockscreen" ".config/nvim" ".config/picom" ".config/qtile" ".config/ranger" ".config/rofi" ".config/Thunar", ".config/tmux", ".zshrc")
+config=( ".bashrc" ".xprofile" ".face" ".config/alacritty" ".config/betterlockscreen" ".config/nvim" ".config/picom" ".config/qtile" ".config/ranger" ".config/rofi" ".config/Thunar", ".config/tmux", ".zshrc", ".config/mpd", ".config/ncmpcpp")
 
 # For each config file, a symbolic link is created
 for value in "${config[@]}"

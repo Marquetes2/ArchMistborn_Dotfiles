@@ -1,0 +1,62 @@
+# General
+mpd_host = "192.168.1.101"
+autocenter_mode = "yes"
+mpd_music_dir = "~/zoro/Desktop/Music"
+
+# Style
+## Alternative Interface
+user_interface = "alternative"
+alternative_header_first_line_format = "$0$aqqu$/a {$(14)%a$9 - }{{$7%b$9}{ [$8%y$9]}}|{$4%D$9} $0$atqq$/a$9"
+alternative_header_second_line_format = "{$3%t$9}|{$3%f$9}"
+
+## Display Modes
+playlist_editor_display_mode = "columns"
+search_engine_display_mode = "columns"
+browser_display_mode = "columns"
+playlist_display_mode = "columns"
+
+## General Colors
+colors_enabled = "yes"
+empty_tag_color = "green"
+header_window_color = "green" # def
+volume_color = "red"
+state_line_color = "red" # no se
+state_flags_color = "red" # def
+main_window_color = "white"
+color1 = "red" # no se
+color2 = "red"
+progressbar_color = "cyan"
+progressbar_elapsed_color = "green"
+statusbar_color = "white" # Button messages
+statusbar_time_color = "red"
+player_state_color = "red"
+alternative_ui_separator_color = "magenta"
+window_border_color = "red"
+active_window_border = "green"
+
+## Song List
+song_columns_list_format = "(10)[15]{l} (30)[green]{t} (30)[14]{a} (30)[7]{b}"
+song_list_format = "{$7%a - $9}{$5%t$9}|{$5%f$9}$R{$6%b $9}{$3%l$9}"
+
+## Visualizer
+visualizer_data_source = "~/OneServer/tmp/mpd.fifo"
+visualizer_output_name = "my_fifo"
+visualizer_type = "spectrum"
+visualizer_in_stereo = "yes"
+visualizer_look = "◆▋"
+
+## Progress Bar
+progressbar_look ="󱤨󰮯󱗘"
+
+## Current Item
+current_item_prefix = "$(15)$r "
+current_item_suffix = "$/r$(end)"
+current_item_inactive_column_prefix = "$(5)$r"
+
+## Now Playing
+now_playing_prefix = " "
+centered_cursor = "yes"
+
+## Selected tracks
+selected_item_prefix = "$/r$(10)󰫤$0 $(yellow)"
+discard_colors_if_item_is_selected = "yes"
