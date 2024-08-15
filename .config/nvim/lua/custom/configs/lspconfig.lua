@@ -1,5 +1,6 @@
 local on_attach = require("plugins.configs.lspconfig").on_attach
 local capabilities = require("plugins.configs.lspconfig").capabilities
+local util = require "lspconfig/util"
 
 local lspconfig = require "lspconfig"
 local servers = { "clangd", "pyright", "cssls", "html", "emmet_language_server", "gdscript"}

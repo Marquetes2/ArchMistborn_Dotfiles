@@ -3,7 +3,7 @@ local M = {}
   
 local function check_notes()
   local directory = os.getenv("PWD")
-  return string.find(directory, "/Notes")
+  return string.find(directory, "/notes")
 end
 
 local function update_chadrc(M)
